@@ -23,4 +23,5 @@ router.delete("/bootcamps/:id", (req, res)=>{
     return res.status(202).json({ "message": `Delete one bootcamp ${req.params.id}` })
 })
 
+// Export router 
 module.exports = router
