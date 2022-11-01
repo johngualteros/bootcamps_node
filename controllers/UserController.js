@@ -39,13 +39,14 @@ exports.updateUser = async(req, res)=>{
     })
 }
 exports.deleteUser = async(req, res)=>{
-    const deletedUser = await User.destroy({
+    const userFounded = await User.findByPk(req.params.id)
+    await User.destroy({
         where: {
             id: req.params.id
         }
     })
     return res.status(202).json({
          "success": true,
-         "data": deletedUser
+         "data": userFounded
     })
 }
